@@ -1,0 +1,201 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Hoja de trabajo 3}
+\author{Juan Esteban Cáceres de León }
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Ejercicio 1}
+\[
+        n\oplus m := \left\{
+        \begin{array}{l l}
+            m & \mbox{si } n=o \\
+            n & \mbox{si } m=o \\
+            s(i\oplus m) & \mbox{si } n=s(i) \\
+        \end{array}
+        \right.
+    \]
+\begin{center}
+    $s(s(s(0))) \oplus s(s(s(s(0))))$
+    
+\end{center}  
+\begin{center}
+    $s(s(s(s(0))) \oplus s(s(s(0))))$
+    
+\end{center}
+\begin{center}
+    $s(s(s(s(s(0))) \oplus s(s(0))))$
+   
+\end{center}
+\begin{center}
+    $s(s(s(s(s(s(0))) \oplus s(0))))$
+    
+\end{center}
+\begin{center}
+    $s(s(s(s(s(s(s(0))) \oplus 0))))$
+   
+\end{center}
+\begin{center}
+    $s(s(s(s(s(s(s(0 \oplus 0)))))))$
+   
+\end{center}
+\begin{center}
+    $s(s(s(s(s(s(s(0)))))))$
+\end{center}
+\section{Ejercicio 2}
+\[
+        n\otimes m := \left\{
+        \begin{array}{l l}
+            0 & \mbox{si } n=o \\
+            0 & \mbox{si } m=o \\
+            m & \mbox{si } n=1 \\
+            n & \mbox{si } m=1 \\
+            s(i)\otimes s(j) & \mbox{si } s(i) \oplus (s(i) \otimes j) \\
+        \end{array}
+        \right.
+    \]
+
+\section{Ejercicio 3}
+\begin{enumerate}
+    \item {$s(s(s(0)))\otimes 0$}
+    \begin{center}
+        $s(s(s(0))) \otimes 0 = 0$
+    \end{center}
+    \item {$s(s(s(0)))\otimes s(0)$}
+    \begin{center}
+        $s(s(s(0))) \otimes s(0) = s(s(s(0))) \oplus (s(s(s(0))) \otimes 0) = s(s(s(0)))$
+    \end{center}
+    \item {$s(s(s(0)))\otimes s(s(0))$}
+   \begin{center}
+       $s(s(s(0))) \oplus (s(s(s(0))) \otimes s(0))$
+   \end{center}
+   \begin{center}
+       $s(s(s(0))) \oplus s(s(s(0)))$
+   \end{center}
+   \begin{center}
+       $s(s(s(s(0))) \oplus s(s(0)))$
+   \end{center}
+   \begin{center}
+       $s(s(s(s(s(0))) \oplus s(0)))$
+   \end{center}
+   \begin{center}
+       $s(s(s(s(s(s(0))) \oplus 0)))$
+      
+   \end{center}
+   \begin{center}
+       $s(s(s(s(s(s(0 \oplus 0))))))$
+   \end{center}
+   \begin{center}
+       $s(s(s(s(s(s(0))))))$
+   \end{center}
+\end{enumerate}
+\section{Ejercicio 4}
+\begin{enumerate}
+    \item $a \oplus s(s(0)) = s(s(a))$
+\begin{center}
+    Caso base: $a = 0$
+\end{center}
+\begin{center}
+    $0\oplus s(s(0)) = s(s(0))$
+\end{center}
+\begin{center}
+    $s(s(0)) = s(s(0))$
+\end{center}
+\begin{center}
+    Caso inductivo: $a = s(i)$
+\end{center}
+\begin{center}
+    $s(i) \oplus s(s(0)) = s(s(s(i)))$
+\end{center}
+\begin{center}
+    $s(s(s(i \oplus 0))) = s(s(s(i)))$
+\end{center}
+\begin{center}
+    $s(s(s(i))) = s(s(s(i)))$
+\end{center}
+    \item $a \otimes b = b \otimes a$
+\begin{center}
+    caso base: $a = 0$
+\end{center}
+\begin{center}
+    $0 \otimes b = b \otimes 0$
+\end{center}
+\begin{center}
+    $0 = 0$
+\end{center}
+\begin{center}
+    Caso inductivo: $a = s(i)$
+\end{center}
+\begin{center}
+    $s(i) \otimes b = b \otimes s(i)$
+\end{center}
+\begin{center}
+    $s(i) \oplus (s(i) \otimes b) = s(i) \oplus (s(i) \otimes b)$
+\end{center}
+\begin{center}
+    $s(i) \otimes b = s(i) \otimes b$
+\end{center}
+    \item $a \otimes (b \otimes c) = (a \otimes b) \otimes c$
+\begin{center}
+    Caso base: $a = 0$
+\end{center}
+\begin{center}
+    $0 \otimes (b \otimes c) = (0 \otimes b) \otimes c$
+\end{center}
+\begin{center}
+    $0 \otimes (bc) = (0) \otimes c$
+\end{center}
+\begin{center}
+    $0 = 0$
+\end{center}
+\begin{center}
+    Caso inductivo: $a = s(i)$
+\end{center}
+\begin{center}
+    $s(i) \otimes (b \otimes c) = (s(i) \otimes b) \otimes c$
+\end{center}
+\begin{center}
+    $s(i) \oplus (s(i) \otimes (b \otimes c)) = (s(i) \oplus (s(i) \otimes b)) \otimes c$
+\end{center}
+\begin{center}
+    $s(i) \oplus (s(i) \otimes (b \otimes c)) = s(i) \oplus (s(i) \otimes (b \otimes c))$
+\end{center}
+    \item $(a \otimes b) \otimes c = (a \otimes c) \oplus (b \otimes c)$
+\end{enumerate}
+\begin{center}
+    Caso base: $c = 0$
+\end{center}
+\begin{center}
+    $(a \otimes b) \otimes 0 = (a \otimes 0) \oplus (b \otimes 0)$
+\end{center}
+\begin{center}
+    $(ab) \otimes 0 = (0) \oplus (0)$
+\end{center}
+\begin{center}
+    $0 = 0$
+\end{center}
+\begin{center}
+    Método inductivo: $c = n \oplus 1$
+\end{center}
+\begin{center}
+    $(a \otimes b) \otimes (n \oplus 1) = (a \otimes (n + 1)) \oplus (b \otimes (n \oplus 1))$
+\end{center}
+\begin{center}
+    $(a \otimes (n \oplus 1) \oplus (b \otimes (n \oplus 1)) = (an \oplus a) \oplus (bn \oplus b)$
+\end{center}
+\begin{center}
+    $(an \oplus a) \oplus (bn \oplus b) = (an \oplus a) \oplus (bn \oplus b)$
+\end{center}
+\begin{center}
+    $an \ominus an \oplus bn \ominus bn \oplus a \ominus a \oplus b \ominus b = 0$
+\end{center}
+\begin{center}
+    $0 = 0$
+\end{center}
+\end{document}
