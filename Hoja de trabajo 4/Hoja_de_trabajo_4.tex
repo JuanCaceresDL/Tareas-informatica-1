@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Hoja de trabajo 4}
+\author{Juan Esteban Cáceres de León}
+\date{para 30 de agosto}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Primera serie}
+Serie de definiciones de conjuntos para $2^{\mathbb{N}}$ Indicar que definiciones corresponden al mismo conjunto.
+
+\begin{enumerate}
+    \item {$a:=\{1,2,4,8,16,32,64\}$} corresponde al conjunto de: {$d:=\{n\in\mathbb{N}\ |\ \exists i\in\mathbb{N}\ .\ n=2^i\wedge n<100 \}$}
+    \item {$b:=\{n\ \in \mathbb{N}\ |\ \exists x \in \mathbb{N}\ .\ x=n/5 \}$} corresponde al conjunto de: {$f:=\{ n\in\mathbb{N}\ |\ \exists x\in \mathbb{N}\ .\ n=x+x+x+x+x \}$}
+    \item {$c:=\{n\in \mathbb{N}\ |\ \exists x\in\mathbb{N}\ .\ n=x*x \}$} corresponde al conjunto de: {$e:=\{ n\in\mathbb{N}\ |\ \exists x\in \mathbb{N}\ .\ x=\sqrt{n} \}$}
+\end{enumerate}
+\section{Segunda serie}
+Utilización de la jerga matemática:
+\begin{enumerate}
+    \item {El conjunto de todos los naturales divisibles dentro de $5$}
+    \begin{center}
+       A:= {$\{n\in \mathbb{N}\ |\ \frac{n}{5}\}$}
+    \end{center}
+    \item {El conjunto de todos los naturales divisibles dentro de $4$ y $5$}
+    \begin{center}
+       B:=  {$\{n\in \mathbb{N}\ |\ \frac{n}{5} \wedge \frac{n}{4}\}$}
+    \end{center}
+\item{El conjunto de todos los naturales que son primos}
+\begin{center}
+    $C:= \{ a|\forall 1<x<a. a mod(x)\not\equiv 0 \}$
+\end{center}
+\item {El conjunto de todos los conjuntos de numeros naturales que contienen
+        un numero divisible dentro de $15$}
+        \begin{center}
+            $D:= \{a|a := \{ n\in \mathbb{N} | \exists x \in a| xmod(15)\equiv 0\} \}$
+        \end{center}
+    \item {El conjunto de todos los conjuntos de numeros naturales que al ser sumados
+        producen $42$ como resultado}
+        \begin{center}
+            $E:= \{ a|a:= \{ n\in \mathbb{N} | \sum_{i=1}^{|A|} n_i = 42 \} \}$
+        \end{center}
+\end{enumerate}
+\section{Tercera serie}
+
+\begin{center}
+    $S:= \{(a,b,c)| amod(2) \equiv 0, bmod(2) \equiv 0, a \not= b, c = a \otimes b, c \geq 30 \}$
+\end{center}
+
+\section{Cuarta serie}
+
+\begin{enumerate}
+    \item $F:=\{ f|f\in \mathbb{N}. (fmod2)\equiv 0 \}$
+    \item $G:= \{ x|x \in \mathbb{N} \wedge b \in \mathbb{B}.\frac{x}{5} \equiv True \Leftrightarrow xmod(5) \equiv 0 \}$
+   \begin{center}
+       $Definamos: \\
+    f:= \mathbb{R} \Rightarrow \mathbb{R}^+; f(x) = x^2$\\
+    $g:= \mathbb{R} \Rightarrow \mathbb{R};g(x) = x$
+    \end{center}
+    \item $fog: \mathbb{R} \Rightarrow \mathbb{R}^2$
+   Por tanto: $D:=\mathbb{{R}}$
+   \item $fog: \mathbb{R} \Rightarrow \mathbb{R}^+$
+   Por tanto: $R:= \mathbb{R}^+$
+\end{enumerate}
+ 
+
+
+\section{Quinta serie}
+\begin{enumerate}
+    \item {$f(x)=x^2$}
+no es inyectiva porque hay mas de una X por Y, si es surjectiva, por lo tanto también implica que no sea biyectiva porque no se cumplen ambos aspectos.
+\item {$g(x)=\frac{1}{cos(x-1)}$}
+
+Existe más de un valor de equis para cada valor de y, por tanto no es inyectiva, el dominio son los reales pero el rango son $\mathbb{R}\neg[-1,1]$, por tanto tampoco es subyectiva ni biyectiva.
+\item{$h(x)=2x$}
+Existe un único valor de equis para cada "y" y el dominio y rango son los reales, por tanto es biyectiva, lo que implica subyectividad e inyectividad.
+
+\item{$w(x)=x+1$}
+Existe un único valor de equis para cada "y" y el dominio y rango son los reales, por tanto es biyectiva, lo que implica subyectividad e inyectividad.
+\end{enumerate}
+\section{Sexta serie}
+
+\begin{enumerate}
+    \item $B:= \{(a,b)| a=2b, b \in \mathbb{N}\}$
+    \item $C:= \{(a,b)|a = 2b-1, b \in \mathbb{N}\}$
+    \item $D:= \{(a,b)|a = 2(-b)-1, b \in \mathbb{Z}^- \}$
+    \item $E:= \{(a,b)|a=f(b),b\in \mathbb{Z} \}$
+\end{enumerate}
+\begin{center}
+    $f(x)= \{ 2x \Leftrightarrow x>0, \\
+    0 \Leftrightarrow x = 0,\\
+    2(-x)-1 \Leftrightarrow x<0\}$
+\end{center}
+\end{document}
+
+
+
+
+
+
+
+
