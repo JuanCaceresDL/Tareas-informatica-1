@@ -1,0 +1,60 @@
+Hoja de trabajo 6 (Link: https://ellie-app.com/3sHbq82tFyRa1 )
+
+
+module Main exposing (..)
+
+import Browser
+import Html exposing (Html, button, div, text)
+type Natural = Suc Natural | Cero
+enteroANatural : Int -> Natural
+enteroANatural x = if x == 0 then Cero else Suc (enteroANatural (x - 1))
+
+sumar : Natural -> Natural -> Natural
+sumar n1 n2 = case (n1,n2) of 
+    (Cero, n2_) -> n2_
+    (n1_, Cero) -> n1_
+    (Suc n1_, n2_) -> Suc(sumar n1_ n2_)
+
+resta : Natural -> Natural -> Natural
+resta n1 n2 = case (n1,n2) of
+    (Cero, n2_) -> Cero
+    (n1_, Cero) -> n1_
+    (Suc n1_, Suc n2_) -> (resta n1_ n2_)
+   
+mult : Natural -> Natural -> Natural
+mult n1 n2 = case (n1, n2) of
+    (Cero, n2_) -> Cero
+    (n1_, Cero) -> Cero
+    (Suc n1_, n2_) -> sumar n2_ (mult n1_ n2_)
+
+division : Natural -> Natural -> (Natural, Natural)
+division n1 n2 = if mult (divi n1 n2 Cero) n2 == n1 then (divi n1 n2 Cero, Cero) else (resta (divi n1 n2 Cero) (Suc Cero), resta n1 (mult (resta (divi n1 n2 Cero) (Suc Cero)) n2))
+divi n1 n2 n3 = case (n1, n2, n3) of
+    (Cero, n2_, n3_) -> n3_
+    (n1_, Cero, _) -> Cero
+    (n1_, n2_, n3_) -> divi (resta n1_ n2_) n2_ (sumar n3_ (Suc Cero))
+ 
+  --Ejercicio 2
+type GExpresion a = 
+    Valor a
+    | Sumar (GExpresion a) (GExpresion a)
+    | Mult (GExpresion a) (GExpresion a)
+ --Ejercicio 3
+ 
+
+ 
+type Estado =
+    Maybe Int
+     | Parc (List Char)
+     
+type alias Expresion = GExpresion Int
+
+--buscarsuma : List Char -> Maybe (List Char, List Char)
+--buscarsuma String.toList case buscarsuma (String.toList "3+8*5*2+4") of
+   -- Nothing -> 3
+    --Just (izquierda, derecha) -> Sumar (parsear (Parcial izquierda)) (parsear (Parcial derecha))
+
+--ej = Parcial (String.toList "3+8*5*2+4")
+
+--parsear : String -> Maybe Expresion
+--type alias PExpresion = Expresion Estado

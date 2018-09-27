@@ -1,0 +1,29 @@
+HOja de trabajo 7 (link: https://ellie-app.com/3sHnZZyG3mma1 )
+
+module Main exposing (..)
+
+import Browser
+import Html exposing (Html, button, div, text)
+
+--Ejercicio 1
+
+sumar : Int -> Int -> Int
+sumar n1 n2 = n1 + n2
+
+mult : Int -> Int -> Int
+mult n1 n2 = n1 * n2
+
+--Ejercicio 2
+
+type Expresion =
+   Sumar Expresion Expresion
+    | Mult Expresion Expresion
+    | Valor Int
+
+
+operar : (Int -> Int -> Int, Int -> Int -> Int) -> Expresion -> Int
+operar (suma, multi) exp =
+    case exp of
+        Sumar exp1 exp2 -> suma (operar (suma, multi) exp1) (operar (suma, multi) exp2)
+        Mult exp1 exp2 -> multi (operar (suma, multi) exp1) (operar (suma, multi) exp2)
+        Valor int -> int
