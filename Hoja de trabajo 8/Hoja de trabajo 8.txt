@@ -1,0 +1,46 @@
+Juan Esteban Cáceres de León
+
+			Hoja de trabajo 8
+Link ellie-app: https://ellie-app.com/3zC7Ryprvbwa1
+
+module Main exposing (..)
+
+import Browser
+import Html exposing (Html, button, div, text)
+
+--Ejercicio 1
+
+zipWith : (a -> b -> c) -> List a -> List b -> List c
+zipWith f list1 list2 = case (list1, list2) of 
+    (_, []) -> [] 
+    ([], _) -> [] 
+    (x::xs, y::ys) -> f x y :: zipWith f xs ys
+
+--Ejercicio 2
+groupBy : (a -> Bool) -> List a -> (List a,List a)
+groupBy op list = (siCumple op list, noCumple op list)
+
+
+siCumple p list = case list of 
+    [] -> [] 
+    (x::xs) -> 
+        if p x then 
+             siCumple p xs 
+        else 
+             x :: siCumple p xs
+
+noCumple p list = case list of 
+    [] -> [] 
+    x::xs -> 
+        if p x then 
+            x :: noCumple p xs 
+        else 
+            noCumple p xs
+
+--Ejercicio 3
+bind : Maybe a -> (a -> Maybe b) -> Maybe b
+
+bind ma f = 
+  case ma of 
+    Nothing -> Nothing 
+    Just a -> f a
